@@ -1,0 +1,34 @@
+﻿Get-PSProvider
+Get-PSDrive
+CD HKCU:
+Get-ChildItem
+Get-Item .\Software
+Get-ChildItem
+Get-ChildItem .\Software
+Get-ItemProperty .\Software
+Get-Item .\Software
+Get-ChildItem .\Software -Recurse
+Get-Item -Path .\Software\Microsoft\Windows\CurrentVersion\Explorer
+Get-ChildItem -Path .\Software\Microsoft\Windows\CurrentVersion\Explorer
+Get-ItemProperty -Path .\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+Get-ItemProperty -Path .\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name DontPrettyPath
+Set-ItemProperty -Path .\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name DontPrettyPath -Value 1
+CD C:
+New-Item -ItemType Directory -Path C: -Name Demo
+CD C:
+CD -Path C:\Windows\System32 -PassThru
+Set-Location -Path C: -PassThru
+Set-Location -Path C:\Windows -PassThru
+Set-Location -Path C: -PassThru
+Set-Location -Path C:\Windows -PassThru
+Set-Location -Path .. -PassThru
+New-Item -ItemType Directory -Path C: -Name Demo
+
+New-Item -ItemType File -Path C:\Demo -Name Test
+Get-ItemProperty .\Demo\Test
+New-Item -ItemType File -Path C:\Demo -Name Test.txt
+Add-Content -Path .\Demo\Test.txt -Value " Task 1 completed"
+Get-PSDrive
+CD Env:
+dir env:
+Get-ChildItem $env:TEMP
